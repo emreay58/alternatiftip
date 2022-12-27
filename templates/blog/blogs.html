@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}Pendik Hacamat ve Sülük Tedavisi | Alternatifyaşam Merkezi 05358735837{% endblock title %}
+{% block dc.title %}Pendik Hacamat ve Sülük Tedavisi | Alternatifyaşam Merkezi 05358735837{% endblock dc.title %}
+{% block og.title %}Pendik Hacamat ve Sülük Tedavisi | Alternatifyaşam Merkezi 05358735837{% endblock og.title %}
+{% block tw.title %}Pendik Hacamat ve Sülük Tedavisi | Alternatifyaşam Merkezi 05358735837{% endblock tw.title %}
+{% block item.title %}Pendik Hacamat ve Sülük Tedavisi | Alternatifyaşam Merkezi 05358735837{% endblock item.title %}
+
+{% block description %}Pendik Tıbbi Hacamat ve Tıbbi Sülük Tedavisi, PRP ve OZON Tedavisi Uygun fiyatlar Alternatifyaşam Merkezinde {% endblock description %}
+{% block dc.description %}Pendik Tıbbi Hacamat ve Tıbbi Sülük Tedavisi, PRP ve OZON Tedavisi Uygun fiyatlar Alternatifyaşam Merkezinde{% endblock dc.description %}
+{% block og.description %}Pendik Tıbbi Hacamat ve Tıbbi Sülük Tedavisi, PRP ve OZON Tedavisi Uygun fiyatlar Alternatifyaşam Merkezinde{% endblock og.description %}
+{% block tw.description %}Pendik Tıbbi Hacamat ve Tıbbi Sülük Tedavisi, PRP ve OZON Tedavisi Uygun fiyatlar Alternatifyaşam Merkezinde{% endblock tw.description %}
+{% block item.description %}Pendik Tıbbi Hacamat ve Tıbbi Sülük Tedavisi, PRP ve OZON Tedavisi Uygun fiyatlar Alternatifyaşam Merkezinde{% endblock item.description %}
+{% block content %}
+<section class="breadcrumbs">
+  <div class="container">
+        <div class="d-flex justify-content-between align-items-center">
+        <h2>BLOGLAR</h2>
+        <ol>
+            <li><a href="{% url 'blogs' %}">Ana Sayfa</a></li>
+            <li>Bloglar</li>
+        </ol>
+        </div>
+    </div>
+</section> 
+
+  <!-- ======= Top Bar ======= -->
+  <main id="main">
+    <!-- ======= Blog Section ======= -->
+    <section class="blog">
+      <div class="container" data-aos="fade-up">
+        <div class="row" style="margin-top: 30px;">
+          <div class="col-lg-8 entries">
+            {% if blogs|length > 0  %}
+            {% include 'blog/_blogs.html' %}
+            {% else %}
+            <div class="alert alert-info">Uygun Blog Bulunamadı</div>
+            {% endif %}
+            <div class="blog-pagination">
+              <ul class="justify-content-center">
+                <li><a href="#">1</a></li>
+                <li class="active"><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+              </ul>
+            </div>
+          </div><!-- End blog entries list -->
+          <div class="col-lg-4">
+            <div class="sidebar">
+              <h3 class="sidebar-title">Ara</h3>
+              <div class="sidebar-item search-form">
+                <form action="">
+                  <input type="text">
+                  <button type="submit"><i class="bi bi-search"></i></button>
+                </form>
+              </div><!-- End sidebar search formn-->
+              <h3 class="sidebar-title">Kategoriler</h3>
+              
+                {% include 'blog/_category.html' %}
+          
+
+              <h3 class="sidebar-title">Diğer Yazılar</h3>
+              <div class="sidebar-item recent-posts">
+                {% for blogs in blogs %}
+                <div class="post-item clearfix">
+                  <img src="{{ blogs.image.url }}" alt="">
+                  <h4><a href="{% url 'blog_detail' blogs.slug %}">{{ blogs.title|title }}</a></h4>
+                  <time datetime="2020-01-01">{{blogs.tarih}}</time>
+                </div>
+                {% endfor %}
+              </div><!-- End sidebar recent posts-->
+
+            </div><!-- End sidebar -->
+
+          </div><!-- End blog sidebar -->
+
+        </div>
+
+      </div>
+    </section><!-- End Blog Section -->
+
+  </main><!-- End #main -->
+
+
+{% endblock content %} %}

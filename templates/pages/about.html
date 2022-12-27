@@ -1,0 +1,65 @@
+{% extends 'base.html' %} 
+
+{% load static %} 
+{% block title %}Pendik Hacamat ve Sülük Tedavisi, Alternatif Yaşam Merkezi 05358735837{% endblock title %}
+{% block dc.title %}Pendik Hacamat ve Sülük Tedavisi | Alternatif yaşam Merkezi 05358735837{% endblock dc.title %}
+{% block og.title %}Pendik Hacamat ve Sülük Tedavisi | Alternatif yaşam Merkezi 05358735837{% endblock og.title %}
+{% block tw.title %}Pendik Hacamat ve Sülük Tedavisi | Alternatif yaşam Merkezi 05358735837{% endblock tw.title %}
+{% block item.title %}Pendik Hacamat ve Sülük Tedavisi | Alternatif yaşam Merkezi 05358735837{% endblock item.title %}
+
+{% block description %}Pendik Tıbbi Hacamat ve Tıbbi Sülük Tedavisi, PRP ve OZON Tedavisi Uygun fiyatlar Alternatif Yaşam Merkezinde {% endblock description %}
+{% block dc.description %}Pendik Tıbbi Hacamat ve Tıbbi Sülük Tedavisi, PRP ve OZON Tedavisi Uygun fiyatlar Alternatif Yaşam Merkezinde{% endblock dc.description %}
+{% block og.description %}Pendik Tıbbi Hacamat ve Tıbbi Sülük Tedavisi, PRP ve OZON Tedavisi Uygun fiyatlar Alternatif Yaşam Merkezinde{% endblock og.description %}
+{% block tw.description %}Pendik Tıbbi Hacamat ve Tıbbi Sülük Tedavisi, PRP ve OZON Tedavisi Uygun fiyatlar Alternatif Yaşam Merkezinde{% endblock tw.description %}
+{% block item.description %}Pendik Tıbbi Hacamat ve Tıbbi Sülük Tedavisi, PRP ve OZON Tedavisi Uygun fiyatlar Alternatif Yaşam Merkezinde{% endblock item.description %}
+
+{% block content %}
+<section class="breadcrumbs">
+    <div class="container">
+          <div class="d-flex justify-content-between align-items-center">
+          <h2>HAKKIMIZDA</h2>
+          <ol>
+              <li><a href="{% url 'index' %}">Ana Sayfa</a></li>
+              <li>Hakkımızda</li>
+          </ol>
+          </div>
+      </div>
+</section>  
+<section id="about" class="about mt-5">
+    <div class="container" data-aos="fade-up">
+
+      <div class="section-title">
+        <h1>ALTERNATİF YAŞAM MERKEZİ</h1>
+        <h3>Pendik Hacamat ve Sülük Tedavisi</h3>
+        <p>Pendik Tıbbi Hacamat ve Sülük Tedavisi yapan Alternatif Yaşam Merkezi çalışanları sürekli kendini geliştirerek, evrensel standartlardaki alternatif sağlık hizmeti anlayışımız ve yarattığımız bilimsel katkılarımız ile dünyada referans gösterilen bir organizasyon olmayı hedefleriz.</p>
+      </div>
+      <div class="row">
+        <div class="col-lg-6" data-aos="fade-right">
+          <img src="{% static 'assets/img/departments-3.jpg' %}" class="img-fluid" alt="">
+        </div>
+        <div class="col-lg-6 pt-4 pt-lg-0 content" data-aos="fade-left">
+          <h3>Amacımız sadece sizlerin güvenini ve taktirini kazanmak. </h3>
+          <p class="fst-italic">
+            Hastalıkta ve sağlıkta sağlık ekibimizle hiçbir ticari amaç gözetmeksizin sizlere evinizde hizmet vermek gayesindeyiz. Alternatif 
+            tedavi hizmeti tıbbi hacamat ve sülük tedavisi alanlarında hizmet vermekteyiz. 20 yıldır sunduğumuz tedavi yöntemleri ile birçok hastaya şifa olduk. 
+            Güleryüzle ve dinamik ekimimizle, memnuniyet ilkesi ile çıktığımız bu yolda hizmetelimize kesintisiz devam etmekteyiz.  
+          </p>
+          <h4>Neden Alternatif Yaşam Merkezi?</h4>
+          <ul>
+            <li><i class="bi bi-check-circle"></i> Steril ortamda tüm tedbirleri almak suretyile hizmet vermekteyiz.</li>
+            <li><i class="bi bi-check-circle"></i> Şüphesiz önceliğimiz insan sağlığı.</li>
+            <li><i class="bi bi-check-circle"></i> Önceki hastalarımız referansımızdır.</li>
+            <li><i class="bi bi-check-circle"></i> Alanında uzman, tecrübeli ve dinamik ekimizle 7/27 hizmet veriyoruz.</li>
+            <li><i class="bi bi-check-circle"></i> Kampanyalı ve uygun fiyat imkanları sunuyoruz.</li>
+            <li><i class="bi bi-check-circle"></i> Sizlere evinizde de hizmet veriyoruz.</li>
+          </ul>
+          <p>
+            Alternatif tıp merkezi olarak pendik bölgemizdeki tüm muhtarlarımızla iletişime geçerek bu dönemde evde sağlık hizmetlerine ihtiyacı olan dar gelirli vatandaşlarımızın ve yaşlılarımızın bildirilmesini rica ettik ve bu konuda elimizden gelen tüm yardımları yapacağımızı bilmelerini istedik, yakın bir zamanda bünyemize ambulansta kazandırıp hastalarımızın bu ihtiyaçlarına da cevap vereceğimizi sizlerle paylaşmaktan kıvanç duyarız. Önce sağlık Önce güven..
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section><!-- End About Us Section -->
+{% endblock content %}
+  

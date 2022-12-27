@@ -1,0 +1,29 @@
+{% extends 'base.html' %} 
+
+{% load static %} 
+{% block title %}Pendik Hacamat ve Sülük Tedavisi | Alternatifyaşam Merkezi 05358735837{% endblock title %}
+{% block dc.title %}Pendik Hacamat ve Sülük Tedavisi | Alternatifyaşam Merkezi 05358735837{% endblock dc.title %}
+{% block og.title %}Pendik Hacamat ve Sülük Tedavisi | Alternatifyaşam Merkezi 05358735837{% endblock og.title %}
+{% block tw.title %}Pendik Hacamat ve Sülük Tedavisi | Alternatifyaşam Merkezi 05358735837{% endblock tw.title %}
+{% block item.title %}Pendik Hacamat ve Sülük Tedavisi | Alternatifyaşam Merkezi 05358735837{% endblock item.title %}
+
+{% block description %}Pendik Tıbbi Hacamat ve Tıbbi Sülük Tedavisi, PRP ve OZON Tedavisi Uygun fiyatlar Alternatifyaşam Merkezinde {% endblock description %}
+{% block dc.description %}Pendik Tıbbi Hacamat ve Tıbbi Sülük Tedavisi, PRP ve OZON Tedavisi Uygun fiyatlar Alternatifyaşam Merkezinde{% endblock dc.description %}
+{% block og.description %}Pendik Tıbbi Hacamat ve Tıbbi Sülük Tedavisi, PRP ve OZON Tedavisi Uygun fiyatlar Alternatifyaşam Merkezinde{% endblock og.description %}
+{% block tw.description %}Pendik Tıbbi Hacamat ve Tıbbi Sülük Tedavisi, PRP ve OZON Tedavisi Uygun fiyatlar Alternatifyaşam Merkezinde{% endblock tw.description %}
+{% block item.description %}Pendik Tıbbi Hacamat ve Tıbbi Sülük Tedavisi, PRP ve OZON Tedavisi Uygun fiyatlar Alternatifyaşam Merkezinde{% endblock item.description %}
+{% block content %}
+<section class="breadcrumbs">
+    <div class="container">
+          <div class="d-flex justify-content-between align-items-center">
+          <h2><strong>FİYATLAR</strong></h2>
+          <ol>
+              <li><a href="{% url 'index' %}">Ana Sayfa</a></li>
+              <li>Fiyatlar</li>
+          </ol>
+          </div>
+      </div>
+  </section> 
+    {% include 'particial/_pricing.html' %}
+{% endblock content %}
+  

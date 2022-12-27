@@ -1,0 +1,19 @@
+    {% load static %}
+    <!-- ======= Services Section ======= -->
+    <section id="services" class="services services">
+        <div class="container" data-aos="fade-up">
+          <div class="section-title">
+            <h2>HİZMETLERİMİZ</h2>
+          </div>
+            <div class="row">
+              {% for services in services %}
+                <div class="col-lg-3 col-md-6 icon-box" data-aos="zoom-in" data-aos-delay="100">
+                  <a href="{% url 'service_detail' services.slug %}"><img class="img-fluid mb-3" src="{{ services.image.url }}" alt=""></a>
+                  <h4 class="title"><a href="{% url 'service_detail' services.slug %}">{{ services.title|title }}</a></h4>
+                  <p class="description"> {{ services.kisaaciklama|safe }} </p>
+                </div>
+              {% endfor %}
+            </div>
+        </div>
+      </section><!-- End Services Section -->
+  

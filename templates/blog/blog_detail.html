@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}{{blog.seotitle}}{% endblock title %}
+{% block dc.title %}{{blog.seotitle}}{% endblock dc.title %}
+{% block og.title %}{{blog.seotitle}}{% endblock og.title %}
+{% block tw.title %}{{blog.seotitle}}{% endblock tw.title %}
+{% block item.title %}{{blog.seotitle}}{% endblock item.title %}
+
+{% block description %}{{blog.seodescription}} {% endblock description %}
+{% block dc.description %}{{blog.seodescription}}{% endblock dc.description %}
+{% block og.description %}{{blog.seodescription}}{% endblock og.description %}
+{% block tw.description %}{{blog.seodescription}}{% endblock tw.description %}
+{% block item.description %}{{blog.seodescription}}{% endblock item.description %}
+{% block content %}
+<section class="breadcrumbs">
+  <div class="container">
+        <div class="d-flex justify-content-between align-items-center">
+        <h2>Makele Detayı</h2>
+        <ol>
+            <li><a href="{% url 'index' %}">Ana Sayfa</a></li>
+            <li>{{blog.title|title}}</li>
+        </ol>
+        </div>
+    </div>
+</section> 
+    <section class="blog">
+      <div class="container" data-aos="fade-up">
+        <div class="row mt-3">
+          <div class="col-lg-9 entries ">
+            <article class="entry entry-single ">
+              <h2 class="entry-title mt-3">
+              </h2>
+              <div class="entry-meta">
+                <ul>
+                  <li class="d-flex align-items-center"><i class="bi bi-person"></i> <a href="{% url 'blog_detail' blog.slug %}">{{blog.yazar}}</a></li>
+                  <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <a href="{% url 'blog_detail' blog.slug %}"><time datetime="2020-01-01">{{blog.date}}</time></a></li>
+                </ul>
+              </div>
+
+              <div class="entry-content">
+                <p>
+                  {{ blog.description|safe}}
+                </p>
+              </div>
+            </article><!-- End blog entry -->
+            <div class="blog-author d-flex align-items-center">
+              <div>
+                <h4>Turgay AY</h4>
+                <div class="social-links">
+                  <a href="https://facebook.com/holistik.yasam.7"><i class="bi bi-facebook"></i></a>
+                  <a href="https://instagram.com/alternatif_saglik_hizmetleri?igshid=YmMyMTA2M2Y="><i class="biu bi-instagram"></i></a>
+                </div>
+                <p>
+                  Lütfen Hakkımızda Daha Fazla Bilgi Edinmek için Sosyal Medya Hesaplarımız Takip Ediniz.
+                </p>
+              </div>
+            </div><!-- End blog author bio -->
+          </div><!-- End blog entries list -->
+          <div class="col-lg-3 mt-3">
+            <div class="sidebar">
+              <h3 class="sidebar-title">Ara</h3>
+              <div class="sidebar-item search-form">
+                <form action="">
+                  <input type="text">
+                  <button type="submit"><i class="bi bi-search"></i></button>
+                </form>
+              </div><!-- End sidebar search formn-->
+              <h3 class="sidebar-title">Tüm Yazılar</h3>
+              <div class="sidebar-item recent-posts">
+                {% for blogs in blogs  %}
+                <div class="post-item clearfix">
+                  <img src="{{ blogs.image.url }}" alt="">
+                  <h4><a href="{% url 'blog_detail' blogs.slug %}">{{ blogs.title|title}}</a></h4>
+                  <time datetime="2020-01-01">{{ blogs.date }}</time>
+                </div>
+               {% endfor %}
+              </div><!-- End sidebar recent posts-->
+            </div><!-- End sidebar -->
+          </div><!-- End blog sidebar -->
+        </div>
+      </div>
+    </section><!-- End Blog Single Section -->
+
+{% endblock content %}

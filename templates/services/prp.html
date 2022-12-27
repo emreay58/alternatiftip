@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Prp{% endblock title %}
+{% block keywords %}<meta name="keywords" content="prp,nedir,faydaları,neler,kupa">{% endblock keywords %}
+{% block description %}<meta name="description" content="PRP Merkezi|Alternatif Yaşam Merkezi Hacamat,Sülük,Ozon ve PRP Tedavisinde 2009 Yılındam Bu Güne Gelen Tecrübe">{% endblock description %}
+
+{% block content %}
+<section class="breadcrumbs" >
+    <div class="container">
+          <div class="d-flex justify-content-between align-items-center">
+          <h2>HİZMETLER</h2>
+          <ol>
+              <li><a href="{% url 'index' %}">Ana Sayfa</a></li>
+              <li>Prp Tedavisi</li>
+          </ol>
+          </div>
+      </div>
+  </section> 
+     <!-- ======= Blog Single Section ======= -->
+     <section id="blog" class="blog">
+      <div class="container-fluid" data-aos="fade-up">
+        <div class="row">
+          <div class="col-lg-8 entries">
+            {% for prp in prp %}
+            <article class="entry entry-single">
+              <h2 class="entry-title mb-5">
+                <a href="{% url 'prp' %}">{{ prp.title|title }}</a>
+              </h2>
+              <div class="entry-content">
+                <p>
+                    {{ prp.descriptions|safe }}
+              </div>
+  
+            </article><!-- End blog entry -->
+            {% endfor %}
+            <div class="blog-author d-flex align-items-center">
+              <img src="{% static 'assets/img/blog/blog-author.jpg' %}" class="rounded-circle float-left" alt="">
+              <div>
+                <h4>Turgay AY</h4>
+                <div class="social-links">
+                  <a href="https://twitters.com/#"><i class="bi bi-twitter"></i></a>
+                  <a href="https://facebook.com/#"><i class="bi bi-facebook"></i></a>
+                  <a href="https://instagram.com/#"><i class="biu bi-instagram"></i></a>
+                </div>
+                <p>
+                  Çalışmalarımızı yakıntan takip etmek için lütfen sosyol medya hesaplarımızı takip ediniz.
+                </p>
+              </div>
+            </div><!-- End blog author bio -->
+  
+          </div><!-- End blog entries list -->
+  
+          <div class="col-lg-4">
+  
+            <div class="sidebar">
+  
+              <h3 class="sidebar-title">Ara</h3>
+              <div class="sidebar-item search-form">
+                <form action="">
+                  <input type="text">
+                  <button type="submit"><i class="bi bi-search"></i></button>
+                </form>
+                
+              <h3 class="sidebar-title mt-3">Diğer Hizmetler</h3>
+              <div class="sidebar-item recent-posts">
+                {% for services in services  %}
+                <div class="post-item clearfix">
+                  <img src="{{ services.image.url }}" alt="">
+                  <h4><a href="{% url 'service_detail' services.slug %}">{{ services.title|title }}</a></h4>
+                </div>
+                {% endfor %}
+  
+            </div><!-- End sidebar -->
+  
+          </div><!-- End blog sidebar -->
+  
+        </div>
+  
+      </div>
+    </section><!-- End Blog Single Section --> 
+    {% include 'particial/_randevu.html' %}
+{% endblock content %}
+
