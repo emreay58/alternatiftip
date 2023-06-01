@@ -1,0 +1,23 @@
+{% extends 'base.html' %} 
+
+{% load static %} 
+{% block title %}Galeri {%endblock title %} 
+{% block keywords %}<meta name="keywords" content="galeri,tıp,merkezi,yaşam,hacamat,nedir,sülük,tedavi,prp,ozon">{% endblock keywords %}
+{% block description %}<meta name="description" content="Galeri Alternatif Yaşam Merkezi, Hacamat ve Sülük Tedavisinde 2009 Yılından Bu Güne Gelen Tecrübe">{% endblock description %}
+
+{% block content %}
+<section class="breadcrumbs">
+    <div class="container">
+          <div class="d-flex justify-content-between align-items-center">
+          <h2>GALERİ</h2>
+          <ol>
+              <li><a href="{% url 'index' %}">Ana Sayfa</a></li>
+              <li>Galeri</li>
+          </ol>
+          </div>
+      </div>
+  </section>
+{% include 'particial/_galeri.html' %}
+
+{% endblock content %}
+  

@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Hizmetlerimiz{% endblock title %}
+{% block keywords %}<meta name="keywords" content="alternatif,tıp,merkezi,yaşam,hacamat,nedir,sülük,tedavi,prp,ozon">{% endblock keywords %}
+{% block description %}<meta name="description" content="Alternatif Yaşam Merkezi, Hacamat ve Sülük Tedavisinde 2009 Yılındam Bu Güne Gelen Tecrübe">{% endblock description %}
+
+{% block content %}
+<section class="breadcrumbs" >
+    <div class="container">
+          <div class="d-flex justify-content-between align-items-center">
+          <h2>HİZMETLER</h2>
+          <ol>
+              <li><a href="{% url 'index' %}">Ana Sayfa</a></li>
+              <li>Hizmetler</li>
+          </ol>
+          </div>
+      </div>
+  </section> 
+
+   
+        {% include 'particial/_services.html' %}
+  
+    
+        {% include 'particial/_pricing.html' %}
+   
+
+{% endblock content %}
+

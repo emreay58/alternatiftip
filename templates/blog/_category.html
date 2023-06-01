@@ -1,0 +1,15 @@
+{% load static %}
+
+<div class="sidebar-item categories">
+{% for Category in category %}
+<ul>
+    <li>
+    {% if Category.slug == selected_category %}
+    <a class="active" href="{% url 'blogs_by_category' Category.slug %}">{{ Category.name|title }}<span></span></a>
+    {% else %}
+    <a href="{% url 'blogs_by_category' Category.slug %}">{{ Category.name|title }}<span></span></a>
+    {% endif %}
+ </li> 
+</ul>
+{% endfor %}
+</div><!-- End sidebar categories-->

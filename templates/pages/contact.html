@@ -1,0 +1,100 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}İletişim{% endblock title %}
+{% block keywords %}<meta name="keywords" content="iletişim,alternatif,tıp,merkezi,yaşam,hacamat,nedir,sülük,tedavi,prp,ozon">{% endblock keywords %}
+{% block description %}<meta name="description" content="İletişim Alternatif Yaşam Merkezi, Hacamat ve Sülük Tedavisinde 2009 Yılından Bu Güne Gelen Tecrübe">{% endblock description %}
+
+{% block content %}
+<section class="breadcrumbs">
+    <div class="container">
+          <div class="d-flex justify-content-between align-items-center">
+          <h2>İLETİŞİM</h2>
+          <ol>
+              <li><a href="{% url 'index' %}">Ana Sayfa</a></li>
+              <li>İletişim</li>
+          </ol>
+          </div>
+      </div>
+  </section>    
+  <section class="contact">
+    <div class="container">
+
+      <div class="section-title">
+        <h2>İletişim</h2>
+        <p>Lütfen bizimle aşağıdaki iletişim bilgilerinden birisi ile iletişime geçiniz</p>
+      </div>
+
+    </div>
+
+    
+
+    <div class="container">
+
+      <div class="row mt-5">
+
+        <div class="col-lg-6">
+
+          <div class="row">
+            <div class="col-md-12">
+              <div class="info-box">
+                <i class="bx bx-map"></i>
+                <h3>Adres</h3>
+                <p>Batı Mah. 23 Nisan Cad. No:18/1 Pendik / İstanbul</p>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="info-box mt-4">
+                <i class="bx bx-envelope"></i>
+                <h3>E-mail</h3>
+                <a href="mailto:info@alternatiftipmerkezi.com">info@alternatiftipmerkezi.com</a>
+                <a href="mailto:turgayay@alternatiftipmerkezi.com">turgayay@alternatiftipmerkezi.com</a>
+
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="info-box mt-4">
+                <i class="bx bx-phone-call"></i>
+                <h3>Telefon</h3>
+                <a href="tel:+905358735837">0-535-8735837</a>
+
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="col-lg-6">
+          <form method="post" role="form">
+            <div class="row">
+              {% csrf_token %}
+              {% if mesaj %}
+              <div class="alert alert-success"><p>{{ mesaj }}</p></div>
+              {% endif %}
+              <div class="col form-group mt-3">
+                <input type="text" name="username" class="form-control"  placeholder="Adınız Soyadınız" required>
+              </div>
+              <div class="col form-group mt-3">
+                <input type="email" class="form-control" name="email" placeholder="Emailiniz" required>
+              </div>
+            </div>
+            <div class="form-group mt-3">
+              <input type="text" class="form-control" name="konu" placeholder="Konu" required>
+            </div>
+            <div class="form-group mt-3">
+              <textarea class="form-control" name="message" rows="5" placeholder="Mesajınız" required></textarea>
+            </div>
+            <div class="my-3">
+            <div class="text-center"><button class="btn btn-secondary" type="submit">Gönder</button></div>
+          </form>
+        </div>
+
+      </div>
+
+    </div>
+    <div>
+      <iframe style="border:0; width: 100%; height: 350px;" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d386108.1201890861!2d29.2277241!3d40.8835108!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cac3545726bd91%3A0x7b35ea61dc7e270c!2sYeni%20Mahalle%2C%2034893%20Pendik%2F%C4%B0stanbul!5e0!3m2!1str!2str!4v1646423741330!5m2!1str!2str" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+  </section><!-- End Contact Section -->
+{% endblock content %}
+

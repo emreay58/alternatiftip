@@ -1,0 +1,29 @@
+{% load static %}
+{% for blogs in blogs %}
+<article class="entry">
+    <div class="entry-img">
+     <a href="{% url 'blog_detail' blogs.slug %}"><img src="{{ blogs.image.url }}" alt="" class="img-fluid"></a> 
+    </div>
+
+    <h2 class="entry-title">
+      <a href="{% url 'blog_detail' blogs.slug %}">{{ blogs.title|title }}</a>
+    </h2>
+
+    <div class="entry-meta">
+      <ul>
+        <li class="d-flex align-items-center"><i class="bi bi-person"></i> <a href="{% url 'blogs' %}">{{ blogs.yazar }}</a></li>
+        <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <a href="{% url 'blogs' %}"><time datetime="2020-01-01">{{ blogs.tarih }}</time></a></li>
+        <li class="d-flex align-items-center"><i class="bi bi-chat-dots"></i> <a href="{% url 'blogs' %}">12 Yorum</a></li>
+      </ul>
+    </div>
+
+    <div class="entry-content">
+      <p>
+        {{ blogs.descriptionbaslik }}
+      </p>
+      <div class="read-more">
+        <a href="{% url 'blog_detail' blogs.slug %}">Ayrıntılı Oku</a>
+      </div>
+    </div>
+  </article><!-- End blog entry -->
+  {% endfor %}

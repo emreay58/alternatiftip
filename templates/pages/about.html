@@ -1,0 +1,56 @@
+{% extends 'base.html' %} 
+
+{% load static %} 
+{% block title %}Hakkımızda {%endblock title %} 
+{% block keywords %}<meta name="keywords" content="alternatif,tıp,merkezi,yaşam,hacamat,nedir,sülük,tedavi,prp,ozon">{% endblock keywords %}
+{% block description %}<meta name="description" content="Hakkımızda Alternatif Yaşam Merkezi, Hacamat ve Sülük Tedavisinde 2009 Yılından Bu Güne Gelen Tecrübe">{% endblock description %}
+
+{% block content %}
+<section class="breadcrumbs">
+    <div class="container">
+          <div class="d-flex justify-content-between align-items-center">
+          <h2>HAKKIMIZDA</h2>
+          <ol>
+              <li><a href="{% url 'index' %}">Ana Sayfa</a></li>
+              <li>Hakkımızda</li>
+          </ol>
+          </div>
+      </div>
+  </section>  
+  <section id="about" class="about mt-5">
+    <div class="container" data-aos="fade-up">
+
+      <div class="section-title">
+        <h2>HAKKIMIZDA</h2>
+        <p>Çalışanlarımız ile birlikte sürekli gelişerek, evrensel standartlardaki sağlık hizmeti anlayışımız ve yarattığımız bilimsel katkılarımız ile dünyada referans gösterilen bir organizasyon olmayı hedefleriz.</p>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-6" data-aos="fade-right">
+          <img src="{% static 'assets/img/departments-3.jpg' %}" class="img-fluid" alt="">
+        </div>
+        <div class="col-lg-6 pt-4 pt-lg-0 content" data-aos="fade-left">
+          <h3>Amacımız sadece sizlerin güvenini ve taktirini kazanmak. </h3>
+          <p class="fst-italic">
+            Hastalıkta ve sağlıkta sağlık ekibimizle hiçbir kar gözetmeksizin sizlere sağlık alanında evde sağlık birimi ve Alternatif 
+            tedavi hizmeti olarak 2 ana eksende hizmet veriyoruz.
+          </p>
+          <ul>
+            <li><i class="bi bi-check-circle"></i> Covid-19 tedbirleri kapsamında hizmet vermekteyiz.</li>
+            <li><i class="bi bi-check-circle"></i> Şüphesiz önceliğimiz sağlık.</li>
+            <li><i class="bi bi-check-circle"></i> Önceki hastalarımız referansımızdır.</li>
+            <li><i class="bi bi-check-circle"></i> Alanında uzman, tecrübeli ve söz sahibi personel ile çalışıyoruz.</li>
+            <li><i class="bi bi-check-circle"></i> Uygun fiyat imkanları sunuyoruz.</li>
+            <li><i class="bi bi-check-circle"></i> Sizlere Evinizde Hizmet Veriyoruz.</li>
+          </ul>
+          <p>
+            
+            Alternatif tıp merkezi olarak bölgemizdeki tüm muhtarlarımızla iletişime geçerek içinden geçtiğimiz bu corona virüs döneminde evde sağlık hizmetlerine ihtiyacı olan dar gelirli vatandaşlarımızın ve yaşlılarımızın bildirilmesini rica ettik ve bu konuda elimizden gelen tüm yardımları yapacağımızı bilmelerini istedik, yakın bir zamanda bünyemize ambulansta kazandırıp hastalarımızın bu ihtiyaçlarına da cevap vereceğimizi sizlerle paylaşmaktan kıvanç duyarız. Önce sağlık Önce güven..
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section><!-- End About Us Section -->
+{% endblock content %}
+  

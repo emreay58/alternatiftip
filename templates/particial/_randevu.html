@@ -1,0 +1,44 @@
+{% load static %}
+<section id="appointment" class="appointment section-bg mt-5">
+    <div class="container" data-aos="fade-up">
+      <div class="section-title">
+        <h2 >Randevu Al</h2>
+        <p>Randevu formunu doldurunuz. Randevu için sizinle iletişime geçeceğiz.</p>
+      </div>
+      <form method="POST" role="form" data-aos="fade-up" data-aos-delay="100">
+         {% csrf_token %} 
+         {% if randevu %}
+         <div class="alert alert-success"><p>{{ randevu }}</p></div>
+         {% endif %}
+        <div class="row">
+          <div class="col-md-4 form-group">
+            <input type="text" name="username" class="form-control" placeholder="Adınız Soyadınız" required>
+          </div>
+          <div class="col-md-4 form-group mt-3 mt-md-0">
+            <input type="email" class="form-control" name="email" placeholder="E-mail" required>
+          </div>
+          <div class="col-md-4 form-group mt-3 mt-md-0">
+            <input type="tel" class="form-control" name="phone"  placeholder="Telefon" required>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4 form-group mt-3">
+            <input type="datetime" name="tarih" class="form-control datepicker" placeholder="Tarih (örn:01.01.2022)" required>
+          </div>
+        </div>
+        <div class="form-group col-md-4 mt-3">
+          <select name="bolum" class="form-control">
+            <option selected>Hacamat</option>
+            <option>Sülük Tedavisi</option>
+            <option>PRP</option>
+            <option>Ozon Tedavisi</option>
+            <option>Evde Sağlık Hizmeti</option>
+          </select>
+        </div>
+        <div class="form-group mt-3">
+          <textarea class="form-control" name="message" rows="5" placeholder="Mesajınız (İsteğe Bağlı)"></textarea>
+        </div>
+        <div class="text-center mt-3"><button class="btn btn-secondary" type="submit">Randevuyu Kaydet</button></div>
+      </form>
+    </div>
+  </section><!-- End Appointment Section -->

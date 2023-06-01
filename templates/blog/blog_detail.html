@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Blog Detayı{% endblock title %}
+{% block keywords %}<meta name="keywords" content="blog,hacamat,sülük,tedavi,prp,ozon">{% endblock keywords %}
+{% block description %}<meta name="description" content="Tıbbi Hacamat Tedavisi, Sülük Tedavisi, Prp, Ozon Tedavisi ile ilgili blog yazılarımız.">{% endblock description %}
+
+{% block css %}
+  <link href="{% static 'css/stylee.css' %}" rel="stylesheet">
+{% endblock css %}
+{% block content %}
+    <section class="blog">
+      <div class="container" data-aos="fade-up">
+        <div class="row mt-5">
+          <div class="col-lg-8 entries ">
+            <article class="entry entry-single mt-3 ">
+              <div class="entry-img  mt-5">
+                <img class="img-fluid " src="{{ blog.image.url }}" alt="" >
+              </div>
+              <h2 class="entry-title mt-5">
+                <a href="{% url 'blog_detail' blog.slug %}">{{blog.title|title}}</a>
+              </h2>
+
+              <div class="entry-meta">
+                <ul>
+                  <li class="d-flex align-items-center"><i class="bi bi-person"></i> <a href="{% url 'blog_detail' blog.slug %}">{{blog.yazar}}</a></li>
+                  <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <a href="{% url 'blog_detail' blog.slug %}"><time datetime="2020-01-01">{{blog.tarih}}</time></a></li>
+                </ul>
+              </div>
+
+              <div class="entry-content">
+                <p>
+                  {{ blog.description|safe}}
+                </p>
+              </div>
+            </article><!-- End blog entry -->
+            <div class="blog-author d-flex align-items-center">
+              <img src="assets/img/blog/blog-author.jpg" class="rounded-circle float-left" alt="">
+              <div>
+                <h4>Turgay AY</h4>
+                <div class="social-links">
+                  <a href="https://twitters.com/#"><i class="bi bi-twitter"></i></a>
+                  <a href="https://facebook.com/#"><i class="bi bi-facebook"></i></a>
+                  <a href="https://instagram.com/#"><i class="biu bi-instagram"></i></a>
+                </div>
+                <p>
+                  Lütfen Hakkımızda Daha Fazla Bilgi Edinmek için Sosyal Medya Hesaplarımız Takip Ediniz.
+                </p>
+              </div>
+            </div><!-- End blog author bio -->
+          </div><!-- End blog entries list -->
+          <div class="col-lg-4 mt-3">
+            <div class="sidebar">
+              <h3 class="sidebar-title">Ara</h3>
+              <div class="sidebar-item search-form">
+                <form action="">
+                  <input type="text">
+                  <button type="submit"><i class="bi bi-search"></i></button>
+                </form>
+              </div><!-- End sidebar search formn-->
+              <h3 class="sidebar-title">Tüm Yazılar</h3>
+              <div class="sidebar-item recent-posts">
+                {% for blogs in blogs  %}
+                <div class="post-item clearfix">
+                  <img src="{{ blogs.image.url }}" alt="">
+                  <h4><a href="{% url 'blog_detail' blogs.slug %}">{{ blogs.title|title}}</a></h4>
+                  <time datetime="2020-01-01">{{ blogs.date }}</time>
+                </div>
+               {% endfor %}
+              </div><!-- End sidebar recent posts-->
+            </div><!-- End sidebar -->
+          </div><!-- End blog sidebar -->
+        </div>
+      </div>
+    </section><!-- End Blog Single Section -->
+
+{% endblock content %}

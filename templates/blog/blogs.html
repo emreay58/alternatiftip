@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}Bloglar{% endblock title %}
+{% block keywords %}<meta name="keywords" content="blog,hacamat,sülük,tedavi,prp,ozon">{% endblock keywords %}
+{% block description %}<meta name="description" content="Tıbbi Hacamat Tedavisi, Sülük Tedavisi, Prp, Ozon Tedavisi ile ilgili blog yazılarımız.">{% endblock description %}
+
+
+{% block content %}
+<section class="breadcrumbs">
+  <div class="container">
+        <div class="d-flex justify-content-between align-items-center">
+        <h2>BLOGLAR</h2>
+        <ol>
+            <li><a href="{% url 'blogs' %}">Ana Sayfa</a></li>
+            <li>Bloglar</li>
+        </ol>
+        </div>
+    </div>
+</section> 
+
+  <!-- ======= Top Bar ======= -->
+  <main id="main">
+    <!-- ======= Blog Section ======= -->
+    <section class="blog">
+      <div class="container" data-aos="fade-up">
+        <div class="row" style="margin-top: 100px;">
+          <div class="col-lg-8 entries">
+            {% if blogs|length > 0  %}
+            {% include 'blog/_blogs.html' %}
+            {% else %}
+            <div class="alert alert-info">Uygun Blog Bulunamadı</div>
+            {% endif %}
+            <div class="blog-pagination">
+              <ul class="justify-content-center">
+                <li><a href="#">1</a></li>
+                <li class="active"><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+              </ul>
+            </div>
+          </div><!-- End blog entries list -->
+          <div class="col-lg-4">
+            <div class="sidebar">
+              <h3 class="sidebar-title">Ara</h3>
+              <div class="sidebar-item search-form">
+                <form action="">
+                  <input type="text">
+                  <button type="submit"><i class="bi bi-search"></i></button>
+                </form>
+              </div><!-- End sidebar search formn-->
+              <h3 class="sidebar-title">Kategoriler</h3>
+              
+                {% include 'blog/_category.html' %}
+          
+
+              <h3 class="sidebar-title">Diğer Yazılar</h3>
+              <div class="sidebar-item recent-posts">
+                {% for blogs in blogs %}
+                <div class="post-item clearfix">
+                  <img src="{{ blogs.image.url }}" alt="">
+                  <h4><a href="{% url 'blog_detail' blogs.slug %}">{{ blogs.title|title }}</a></h4>
+                  <time datetime="2020-01-01">{{blogs.tarih}}</time>
+                </div>
+                {% endfor %}
+              </div><!-- End sidebar recent posts-->
+
+            </div><!-- End sidebar -->
+
+          </div><!-- End blog sidebar -->
+
+        </div>
+
+      </div>
+    </section><!-- End Blog Section -->
+
+  </main><!-- End #main -->
+
+
+{% endblock content %} %}
